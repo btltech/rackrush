@@ -13,7 +13,8 @@ class SocketService extends ChangeNotifier {
   static const String _devUrl = 'http://localhost:3000';
   static const String _prodUrl = 'https://rackrush-server-production.up.railway.app';
   
-  String get serverUrl => kReleaseMode ? _prodUrl : _devUrl;
+  // Always use production URL for physical device testing
+  String get serverUrl => _prodUrl;
   
   void connect(String deviceId) {
     _deviceId = deviceId;
