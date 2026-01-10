@@ -99,6 +99,59 @@ export interface QueuedMessage {
     mode: GameMode;
 }
 
+// Daily Challenge messages
+export interface GetDailyChallengeMessage {
+    type: 'getDailyChallenge';
+}
+
+export interface DailyChallengeMessage {
+    type: 'dailyChallenge';
+    id: string;
+    date: string;
+    mode: GameMode;
+    letters: string[];
+    bonuses: BonusTile[];
+}
+
+export interface SubmitDailyWordMessage {
+    type: 'submitDailyWord';
+    challengeId: string;
+    word: string;
+}
+
+export interface DailyResultMessage {
+    type: 'dailyResult';
+    word: string;
+    score: number;
+    isNewBest: boolean;
+    rank: number;
+}
+
+export interface GetDailyLeaderboardMessage {
+    type: 'getDailyLeaderboard';
+    challengeId: string;
+}
+
+export interface DailyLeaderboardMessage {
+    type: 'dailyLeaderboard';
+    entries: Array<{
+        rank: number;
+        displayName: string | null;
+        bestWord: string;
+        score: number;
+    }>;
+}
+
+export type ClientMessage =
+    | HelloMessage
+    | QueueMessage
+    | SubmitWordMessage
+    | PingMessage
+    | LeaveMessage
+    | GetDailyChallengeMessage
+    | SubmitDailyWordMessage
+    | GetDailyLeaderboardMessage;
+
 export type ServerMessage =
     | MatchFoundMessage
     | RoundStartMessage
@@ -107,4 +160,7 @@ export type ServerMessage =
     | MatchResultMessage
     | PongMessage
     | QueuedMessage
-    | ErrorMessage;
+    | ErrorMessage
+    | DailyChallengeMessage
+    | DailyResultMessage
+    | DailyLeaderboardMessage;
