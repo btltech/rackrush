@@ -37,13 +37,6 @@ export interface LeaveMessage {
     type: 'leave';
 }
 
-export type ClientMessage =
-    | HelloMessage
-    | QueueMessage
-    | SubmitWordMessage
-    | PingMessage
-    | LeaveMessage;
-
 // Server → Client messages
 export interface MatchFoundMessage {
     type: 'matchFound';

@@ -154,14 +154,16 @@ export async function submitDailyScore(
     }
 
     // Get rank
-    const [rankResult] = await db.execute<{ rank: number }>(sql`
+    const rankResult = await db.execute(sql`
     SELECT COUNT(*) + 1 as rank 
     FROM daily_scores 
     WHERE challenge_id = ${challengeId} AND score > ${score}
   `);
 
+    const rankRow = (rankResult as any).rows?.[0];
+
     return {
         isNewBest,
-        rank: (rankResult as any)?.rank || 1,
+        rank: rankRow?.rank ? Number(rankRow.rank) : 1,
     };
 }
