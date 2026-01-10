@@ -11,7 +11,7 @@ class SocketService extends ChangeNotifier {
   
   // Server URL - change for production
   static const String _devUrl = 'http://localhost:3000';
-  static const String _prodUrl = 'wss://your-railway-domain.up.railway.app';
+  static const String _prodUrl = 'https://rackrush-server-production.up.railway.app';
   
   String get serverUrl => kReleaseMode ? _prodUrl : _devUrl;
   
