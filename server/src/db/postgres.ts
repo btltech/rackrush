@@ -79,6 +79,9 @@ export function getDb() {
 
         pool.on('error', (err) => {
             console.error('PostgreSQL pool error:', err);
+            // Reset db to trigger reconnection on next getDb() call
+            db = null;
+            pool = null;
         });
 
         db = drizzle(pool);

@@ -43,9 +43,9 @@ export class BotPlayer {
         };
     }
 
-    // Schedule bot's word submission
-    scheduleSubmission(room: Room, onSubmit: (word: string) => void): void {
-        if (!room.currentRound) return;
+    // Schedule bot's word submission - returns timeout ID for cleanup
+    scheduleSubmission(room: Room, onSubmit: (word: string) => void): NodeJS.Timeout | null {
+        if (!room.currentRound) return null;
 
         const letters = room.currentRound.letters;
         const bonuses = room.currentRound.bonuses;
@@ -56,8 +56,7 @@ export class BotPlayer {
         if (validWords.length === 0) {
             // No valid words - submit empty after delay
             const delay = this.getDelay();
-            setTimeout(() => onSubmit(''), delay);
-            return;
+            return setTimeout(() => onSubmit(''), delay);
         }
 
         // Score all words
@@ -70,7 +69,7 @@ export class BotPlayer {
         const word = this.pickWord(scoredWords);
         const delay = this.getDelay();
 
-        setTimeout(() => onSubmit(word), delay);
+        return setTimeout(() => onSubmit(word), delay);
     }
 
     private pickWord(scoredWords: { word: string; score: number }[]): string {

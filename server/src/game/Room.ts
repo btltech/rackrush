@@ -31,14 +31,25 @@ export interface RoundState {
 
 export type RoomStatus = 'waiting' | 'playing' | 'finished';
 
+// Kids mode settings (optional, only set for kids matches)
+export interface KidsModeRoomSettings {
+    kidsMode: true;
+    ageGroup: '4-6' | '7-9' | '10-12';
+    timerSeconds: number;
+    letterCount: number;
+    minWordLength: number;
+    roundsPerMatch: number;
+}
+
 export class Room {
     id: string;
     mode: GameMode;
     status: RoomStatus;
     players: Player[];
-    wins: Map<string, number>;  // playerId -> win count
+    totalScores: Map<string, number>;  // playerId -> cumulative score across all rounds
     currentRound: RoundState | null;
     roundHistory: RoundState[];
+    kidsMode?: KidsModeRoomSettings;  // Kids mode settings if applicable
 
     private roundTimer: NodeJS.Timeout | null = null;
     private onRoundEnd: ((room: Room) => void) | null = null;
@@ -48,7 +59,7 @@ export class Room {
         this.mode = mode;
         this.status = 'waiting';
         this.players = [];
-        this.wins = new Map();
+        this.totalScores = new Map();
         this.currentRound = null;
         this.roundHistory = [];
     }
@@ -58,7 +69,7 @@ export class Room {
         if (this.players.length >= 2) return false;
 
         this.players.push(player);
-        this.wins.set(player.id, 0);
+        this.totalScores.set(player.id, 0);
 
         if (this.players.length === 2) {
             this.status = 'playing';
@@ -73,18 +84,23 @@ export class Room {
     }
 
     // Start a new round
-    startRound(onEnd: (room: Room) => void): RoundState {
+    startRound(onEnd: (room: Room) => void, delayMs: number = 0): RoundState {
         const roundNum = this.roundHistory.length + 1;
-        const { letters, bonuses } = rackGenerator.generate(this.mode);
-        const timerSeconds = config.modes[this.mode].timer;
+
+        // Use kids mode settings if available, otherwise use default config
+        const effectiveMode = this.kidsMode?.letterCount ?? this.mode;
+        const timerSeconds = this.kidsMode?.timerSeconds ?? config.modes[this.mode].timer;
+
+        const { letters, bonuses } = rackGenerator.generate(effectiveMode as GameMode);
         const now = Date.now();
+        const startTimestamp = now + delayMs;
 
         this.currentRound = {
             round: roundNum,
             letters,
             bonuses,
-            startedAt: now,
-            endsAt: now + timerSeconds * 1000,
+            startedAt: startTimestamp,
+            endsAt: startTimestamp + timerSeconds * 1000,
             submissions: new Map(),
         };
 
@@ -93,7 +109,7 @@ export class Room {
         // Set timer for round end
         this.roundTimer = setTimeout(() => {
             this.endRound();
-        }, timerSeconds * 1000);
+        }, delayMs + timerSeconds * 1000);
 
         return this.currentRound;
     }
@@ -155,27 +171,20 @@ export class Room {
             }
         }
 
-        // Determine round winner
+        // Add scores to cumulative totals
         const [p1, p2] = this.players;
         const sub1 = this.currentRound.submissions.get(p1.id)!;
         const sub2 = this.currentRound.submissions.get(p2.id)!;
 
-        if (sub1.score > sub2.score) {
-            this.wins.set(p1.id, (this.wins.get(p1.id) || 0) + 1);
-        } else if (sub2.score > sub1.score) {
-            this.wins.set(p2.id, (this.wins.get(p2.id) || 0) + 1);
-        }
-        // Tie: no points awarded
+        this.totalScores.set(p1.id, (this.totalScores.get(p1.id) || 0) + sub1.score);
+        this.totalScores.set(p2.id, (this.totalScores.get(p2.id) || 0) + sub2.score);
 
         // Archive round
         this.roundHistory.push(this.currentRound);
 
-        // Check for match end
-        const p1Wins = this.wins.get(p1.id) || 0;
-        const p2Wins = this.wins.get(p2.id) || 0;
-
-        if (p1Wins >= config.roundsToWin || p2Wins >= config.roundsToWin ||
-            this.roundHistory.length >= config.maxRounds) {
+        // Check for match end (after configured rounds)
+        const totalRounds = this.kidsMode?.roundsPerMatch ?? config.totalRounds;
+        if (this.roundHistory.length >= totalRounds) {
             this.status = 'finished';
         }
 
@@ -186,7 +195,7 @@ export class Room {
     }
 
     // Get round result for a specific player
-    getRoundResult(playerId: string): RoundResultMessage | null {
+    getRoundResult(playerId: string, nextRoundStartsAt?: number): RoundResultMessage | null {
         const lastRound = this.roundHistory[this.roundHistory.length - 1];
         if (!lastRound) return null;
 
@@ -208,25 +217,28 @@ export class Room {
             oppWord: oppSub.word,
             oppScore: oppSub.score,
             winner,
-            yourWins: this.wins.get(playerId) || 0,
-            oppWins: this.wins.get(opponent.id) || 0,
+            yourTotalScore: this.totalScores.get(playerId) || 0,
+            oppTotalScore: this.totalScores.get(opponent.id) || 0,
+            roundNumber: this.roundHistory.length,
+            totalRounds: this.kidsMode?.roundsPerMatch ?? config.totalRounds,
+            nextRoundStartsAt,
         };
     }
 
     // Get match result for a player
-    getMatchResult(playerId: string): { yourWins: number; oppWins: number; winner: 'you' | 'opp' } | null {
+    getMatchResult(playerId: string): { yourTotalScore: number; oppTotalScore: number; winner: 'you' | 'opp' | 'tie' } | null {
         if (this.status !== 'finished') return null;
 
         const opponent = this.getOpponent(playerId);
         if (!opponent) return null;
 
-        const yourWins = this.wins.get(playerId) || 0;
-        const oppWins = this.wins.get(opponent.id) || 0;
+        const yourTotalScore = this.totalScores.get(playerId) || 0;
+        const oppTotalScore = this.totalScores.get(opponent.id) || 0;
 
         return {
-            yourWins,
-            oppWins,
-            winner: yourWins >= oppWins ? 'you' : 'opp',
+            yourTotalScore,
+            oppTotalScore,
+            winner: yourTotalScore > oppTotalScore ? 'you' : (yourTotalScore < oppTotalScore ? 'opp' : 'tie'),
         };
     }
 

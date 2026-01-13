@@ -11,9 +11,8 @@ export const config = {
         10: { letters: 10, minVowels: 3, maxRare: 1, timer: 45 },
     } as const,
 
-    // Best of N rounds
-    roundsToWin: 3,
-    maxRounds: 5,
+    // Fixed 7 rounds (Jangle-inspired)
+    totalRounds: 7,
 
     // Bot delays (ms)
     botDelays: {

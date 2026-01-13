@@ -122,6 +122,18 @@ export async function submitDailyScore(
     score: number
 ): Promise<{ isNewBest: boolean; rank: number }> {
     const db = getDb();
+    const today = new Date().toISOString().split('T')[0];
+
+    // Verify this is today's challenge
+    const [challenge] = await db
+        .select()
+        .from(dailyChallenges)
+        .where(sql`${dailyChallenges.id} = ${challengeId} AND ${dailyChallenges.date} = ${today}`)
+        .limit(1);
+
+    if (!challenge) {
+        throw new Error('Invalid or expired challenge');
+    }
 
     // Check existing score
     const [existing] = await db

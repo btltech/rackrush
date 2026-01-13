@@ -3,6 +3,17 @@ export type GameMode = 7 | 8 | 9 | 10;
 export type MatchType = 'pvp' | 'bot';
 export type BotDifficulty = 'easy' | 'medium' | 'hard';
 
+// Kids Mode settings
+export type KidsAgeGroup = '4-6' | '7-9' | '10-12';
+export interface KidsModeSettings {
+    kidsMode: true;
+    ageGroup: KidsAgeGroup;
+    timerSeconds: number;
+    letterCount: number;
+    minWordLength: number;
+    roundsPerMatch: number;
+}
+
 // Bonus tile types
 export type BonusType = 'DL' | 'TL' | 'DW';
 export interface BonusTile {
@@ -22,10 +33,11 @@ export interface QueueMessage {
     mode: GameMode;
     matchType: MatchType;
     botDifficulty?: BotDifficulty;
+    kidsMode?: KidsModeSettings;  // Kids mode matchmaking settings
 }
 
 export interface SubmitWordMessage {
-    type: 'submitWord';
+    type: 'submit';
     word: string;
 }
 
@@ -53,7 +65,9 @@ export interface RoundStartMessage {
     round: number;
     letters: string[];
     bonuses: BonusTile[];
-    endsAt: number;  // Unix timestamp (ms)
+    endsAt: number;  // Unix timestamp (ms) - for server reference
+    durationMs: number;  // Round duration in ms - for client relative timing
+    delayMs: number;     // Time in ms before round starts (countdown)
 }
 
 export interface OpponentSubmittedMessage {
@@ -67,15 +81,18 @@ export interface RoundResultMessage {
     oppWord: string;
     oppScore: number;
     winner: 'you' | 'opp' | 'tie';
-    yourWins: number;
-    oppWins: number;
+    yourTotalScore: number;  // Cumulative score across all rounds
+    oppTotalScore: number;   // Cumulative score across all rounds
+    roundNumber: number;     // Current round (1-3)
+    totalRounds: number;     // Total rounds (3)
+    nextRoundStartsAt?: number; // Timestamp for next round start
 }
 
 export interface MatchResultMessage {
     type: 'matchResult';
-    yourWins: number;
-    oppWins: number;
-    winner: 'you' | 'opp';
+    yourTotalScore: number;
+    oppTotalScore: number;
+    winner: 'you' | 'opp' | 'tie';
 }
 
 export interface PongMessage {
@@ -122,11 +139,11 @@ export interface DailyResultMessage {
 
 export interface GetDailyLeaderboardMessage {
     type: 'getDailyLeaderboard';
-    challengeId: string;
 }
 
 export interface DailyLeaderboardMessage {
     type: 'dailyLeaderboard';
+    challengeId: string;
     entries: Array<{
         rank: number;
         displayName: string | null;
