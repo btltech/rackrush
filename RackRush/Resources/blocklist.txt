@@ -1,0 +1,33 @@
+# Profanity Blocklist
+# Add words here (one per line) to exclude from gameplay
+# Case-insensitive
+
+# Common profanity
+FUCK
+SHIT
+DAMN
+HELL
+ASS
+BITCH
+CUNT
+DICK
+COCK
+PISS
+SLUT
+WHORE
+BASTARD
+CRAP
+
+# Slurs (partial list - expand as needed)
+NIGGER
+NIGGA
+FAGGOT
+FAG
+RETARD
+RETARDED
+SPIC
+CHINK
+KIKE
+DYKE
+
+# Add more as needed...

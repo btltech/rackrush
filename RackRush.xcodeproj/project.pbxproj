@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		001 /* RackRushApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101 /* RackRushApp.swift */; };
+		002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102 /* ContentView.swift */; };
+		003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103 /* Assets.xcassets */; };
+		004 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104 /* SocketService.swift */; };
+		005 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105 /* GameState.swift */; };
+		006 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106 /* Theme.swift */; };
+		007 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107 /* HomeView.swift */; };
+		008 /* ModeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108 /* ModeSelectView.swift */; };
+		009 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109 /* MatchView.swift */; };
+		010 /* ResultViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110 /* ResultViews.swift */; };
+		011 /* DailyChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112 /* DailyChallengeView.swift */; };
+		012 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113 /* AudioManager.swift */; };
+		013 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114 /* Animations.swift */; };
+		014 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115 /* SettingsView.swift */; };
+		015 /* DictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116 /* DictionaryService.swift */; };
+		016 /* ConnectionBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117 /* ConnectionBanner.swift */; };
+		017 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118 /* OnboardingView.swift */; };
+		018 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119 /* Effects.swift */; };
+		019 /* ScoreBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120 /* ScoreBar.swift */; };
+		020 /* StatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122 /* StatsManager.swift */; };
+		021 /* PremiumTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123 /* PremiumTile.swift */; };
+		022 /* GameFeel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124 /* GameFeel.swift */; };
+		023 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125 /* Logger.swift */; };
+		024 /* ResponsiveLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126 /* ResponsiveLayout.swift */; };
+		025 /* UserGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127 /* UserGuideView.swift */; };
+		026 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128 /* Accessibility.swift */; };
+		027 /* KidsModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129 /* KidsModeManager.swift */; };
+		028 /* KidsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130 /* KidsTheme.swift */; };
+		029 /* KidsWordFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131 /* KidsWordFilter.swift */; };
+		030 /* ParentalControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132 /* ParentalControlsView.swift */; };
+		031 /* KidsComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133 /* KidsComponents.swift */; };
+		032 /* KidsResultViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134 /* KidsResultViews.swift */; };
+		033 /* PINVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135 /* PINVerificationView.swift */; };
+		034 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136 /* ShareSheet.swift */; };
+		035 /* ViralSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137 /* ViralSharing.swift */; };
+		036 /* TutorialOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138 /* TutorialOverlay.swift */; };
+		037 /* FirstWinCelebration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139 /* FirstWinCelebration.swift */; };
+		038 /* ShareCardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140 /* ShareCardGenerator.swift */; };
+		039 /* DailyChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141 /* DailyChallengeManager.swift */; };
+		040 /* AchievementSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142 /* AchievementSystem.swift */; };
+		041 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143 /* AchievementsView.swift */; };
+		042 /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144 /* PerformanceMonitor.swift */; };
+		043 /* LoadingStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145 /* LoadingStates.swift */; };
+		044 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146 /* LeaderboardView.swift */; };
+		045 /* BotPersonality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147 /* BotPersonality.swift */; };
+		046 /* BotSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148 /* BotSelectionView.swift */; };
+		2B4467213D7FCB227F6EF24A /* LocalScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB758106AA473A528DAD23 /* LocalScorer.swift */; };
+		400369445E66E390491E0823 /* LocalDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216CE03EBBE358AFCA9A9399 /* LocalDictionary.swift */; };
+		4C513457B31C6DEC8B8ECC7A /* kids_enable.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC7F2F1A30F90835D340C07E /* kids_enable.txt */; };
+		51B5D0C8708FD44308856938 /* LocalBotPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07D99A6CCF7428621F3D69 /* LocalBotPlayer.swift */; };
+		7C5C5A2F2F1321BA005CBEC2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 900 /* SocketIO */; };
+		8A5AA0F6D153C922BBD82FAE /* GameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36881006F355EDA1F65E235B /* GameCenterService.swift */; };
+		A0B2D3D652239D2ADD35872B /* kids_definitions.json in Resources */ = {isa = PBXBuildFile; fileRef = C9443D5E9E20D677F26FB8DC /* kids_definitions.json */; };
+		D33CE788F4D47D598F443A15 /* enable.txt in Resources */ = {isa = PBXBuildFile; fileRef = EAA92D8787EE489D1AD130C6 /* enable.txt */; };
+		E330B1108D91F38B392CF173 /* blocklist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0A22F668D596F534538E645F /* blocklist.txt */; };
+		E6FC341E09EDDFF78B3E4CA8 /* LocalRackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7DCD3CD5FCC169091D033 /* LocalRackGenerator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06C423174D6BDCFB0198D8DF /* RackRush.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; name = RackRush.entitlements; path = RackRush/RackRush.entitlements; sourceTree = "<group>"; };
+		0A22F668D596F534538E645F /* blocklist.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = blocklist.txt; sourceTree = "<group>"; };
+		101 /* RackRushApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackRushApp.swift; sourceTree = "<group>"; };
+		102 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		104 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		105 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		106 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		107 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		108 /* ModeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectView.swift; sourceTree = "<group>"; };
+		109 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		110 /* ResultViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViews.swift; sourceTree = "<group>"; };
+		111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		112 /* DailyChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeView.swift; sourceTree = "<group>"; };
+		113 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		114 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		115 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		116 /* DictionaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryService.swift; sourceTree = "<group>"; };
+		117 /* ConnectionBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionBanner.swift; sourceTree = "<group>"; };
+		118 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		119 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
+		120 /* ScoreBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBar.swift; sourceTree = "<group>"; };
+		122 /* StatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsManager.swift; sourceTree = "<group>"; };
+		123 /* PremiumTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTile.swift; sourceTree = "<group>"; };
+		124 /* GameFeel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeel.swift; sourceTree = "<group>"; };
+		125 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		126 /* ResponsiveLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveLayout.swift; sourceTree = "<group>"; };
+		127 /* UserGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideView.swift; sourceTree = "<group>"; };
+		128 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
+		129 /* KidsModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsModeManager.swift; sourceTree = "<group>"; };
+		130 /* KidsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsTheme.swift; sourceTree = "<group>"; };
+		131 /* KidsWordFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsWordFilter.swift; sourceTree = "<group>"; };
+		132 /* ParentalControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentalControlsView.swift; sourceTree = "<group>"; };
+		133 /* KidsComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsComponents.swift; sourceTree = "<group>"; };
+		134 /* KidsResultViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsResultViews.swift; sourceTree = "<group>"; };
+		135 /* PINVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINVerificationView.swift; sourceTree = "<group>"; };
+		136 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		137 /* ViralSharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViralSharing.swift; sourceTree = "<group>"; };
+		138 /* TutorialOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialOverlay.swift; sourceTree = "<group>"; };
+		139 /* FirstWinCelebration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWinCelebration.swift; sourceTree = "<group>"; };
+		140 /* ShareCardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardGenerator.swift; sourceTree = "<group>"; };
+		141 /* DailyChallengeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeManager.swift; sourceTree = "<group>"; };
+		142 /* AchievementSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementSystem.swift; sourceTree = "<group>"; };
+		143 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		144 /* PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
+		145 /* LoadingStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStates.swift; sourceTree = "<group>"; };
+		146 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		147 /* BotPersonality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotPersonality.swift; sourceTree = "<group>"; };
+		148 /* BotSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotSelectionView.swift; sourceTree = "<group>"; };
+		200 /* RackRush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RackRush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		216CE03EBBE358AFCA9A9399 /* LocalDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalDictionary.swift; sourceTree = "<group>"; };
+		23C7DCD3CD5FCC169091D033 /* LocalRackGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalRackGenerator.swift; sourceTree = "<group>"; };
+		36881006F355EDA1F65E235B /* GameCenterService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameCenterService.swift; sourceTree = "<group>"; };
+		AC7F2F1A30F90835D340C07E /* kids_enable.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = kids_enable.txt; sourceTree = "<group>"; };
+		C9443D5E9E20D677F26FB8DC /* kids_definitions.json */ = {isa = PBXFileReference; includeInIndex = 1; path = kids_definitions.json; sourceTree = "<group>"; };
+		DEEB758106AA473A528DAD23 /* LocalScorer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalScorer.swift; sourceTree = "<group>"; };
+		DF07D99A6CCF7428621F3D69 /* LocalBotPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalBotPlayer.swift; sourceTree = "<group>"; };
+		EAA92D8787EE489D1AD130C6 /* enable.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = enable.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5C5A2F2F1321BA005CBEC2 /* SocketIO in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		400 = {
+			isa = PBXGroup;
+			children = (
+				500 /* RackRush */,
+				600 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		500 /* RackRush */ = {
+			isa = PBXGroup;
+			children = (
+				101 /* RackRushApp.swift */,
+				102 /* ContentView.swift */,
+				106 /* Theme.swift */,
+				103 /* Assets.xcassets */,
+				111 /* Info.plist */,
+				501 /* Services */,
+				502 /* Models */,
+				503 /* Views */,
+				504 /* Components */,
+				505 /* Utils */,
+				130 /* KidsTheme.swift */,
+				949741FE8C747DEB03B1A5BC /* Resources */,
+				06C423174D6BDCFB0198D8DF /* RackRush.entitlements */,
+			);
+			path = RackRush;
+			sourceTree = "<group>";
+		};
+		501 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				104 /* SocketService.swift */,
+				113 /* AudioManager.swift */,
+				116 /* DictionaryService.swift */,
+				125 /* Logger.swift */,
+				129 /* KidsModeManager.swift */,
+				131 /* KidsWordFilter.swift */,
+				216CE03EBBE358AFCA9A9399 /* LocalDictionary.swift */,
+				140 /* ShareCardGenerator.swift */,
+				DEEB758106AA473A528DAD23 /* LocalScorer.swift */,
+				23C7DCD3CD5FCC169091D033 /* LocalRackGenerator.swift */,
+				DF07D99A6CCF7428621F3D69 /* LocalBotPlayer.swift */,
+				36881006F355EDA1F65E235B /* GameCenterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		502 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				105 /* GameState.swift */,
+				141 /* DailyChallengeManager.swift */,
+				142 /* AchievementSystem.swift */,
+				147 /* BotPersonality.swift */,
+				122 /* StatsManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		503 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				107 /* HomeView.swift */,
+				108 /* ModeSelectView.swift */,
+				109 /* MatchView.swift */,
+				110 /* ResultViews.swift */,
+				112 /* DailyChallengeView.swift */,
+				115 /* SettingsView.swift */,
+				118 /* OnboardingView.swift */,
+				138 /* TutorialOverlay.swift */,
+				139 /* FirstWinCelebration.swift */,
+				143 /* AchievementsView.swift */,
+				146 /* LeaderboardView.swift */,
+				148 /* BotSelectionView.swift */,
+				127 /* UserGuideView.swift */,
+				132 /* ParentalControlsView.swift */,
+				134 /* KidsResultViews.swift */,
+				135 /* PINVerificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		504 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				114 /* Animations.swift */,
+				117 /* ConnectionBanner.swift */,
+				119 /* Effects.swift */,
+				120 /* ScoreBar.swift */,
+				123 /* PremiumTile.swift */,
+				124 /* GameFeel.swift */,
+				126 /* ResponsiveLayout.swift */,
+				128 /* Accessibility.swift */,
+				133 /* KidsComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		505 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				136 /* ShareSheet.swift */,
+				137 /* ViralSharing.swift */,
+				144 /* PerformanceMonitor.swift */,
+				145 /* LoadingStates.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		600 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				200 /* RackRush.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		949741FE8C747DEB03B1A5BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EAA92D8787EE489D1AD130C6 /* enable.txt */,
+				0A22F668D596F534538E645F /* blocklist.txt */,
+				AC7F2F1A30F90835D340C07E /* kids_enable.txt */,
+				C9443D5E9E20D677F26FB8DC /* kids_definitions.json */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		700 /* RackRush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 800 /* Build configuration list for PBXNativeTarget "RackRush" */;
+			buildPhases = (
+				701 /* Sources */,
+				300 /* Frameworks */,
+				702 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RackRush;
+			packageProductDependencies = (
+				900 /* SocketIO */,
+			);
+			productName = RackRush;
+			productReference = 200 /* RackRush.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		750 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					700 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 850 /* Build configuration list for PBXProject "RackRush" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 400;
+			packageReferences = (
+				901 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+			);
+			productRefGroup = 600 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				700 /* RackRush */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		702 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003 /* Assets.xcassets in Resources */,
+				D33CE788F4D47D598F443A15 /* enable.txt in Resources */,
+				E330B1108D91F38B392CF173 /* blocklist.txt in Resources */,
+				4C513457B31C6DEC8B8ECC7A /* kids_enable.txt in Resources */,
+				A0B2D3D652239D2ADD35872B /* kids_definitions.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		701 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				002 /* ContentView.swift in Sources */,
+				001 /* RackRushApp.swift in Sources */,
+				004 /* SocketService.swift in Sources */,
+				005 /* GameState.swift in Sources */,
+				006 /* Theme.swift in Sources */,
+				007 /* HomeView.swift in Sources */,
+				008 /* ModeSelectView.swift in Sources */,
+				009 /* MatchView.swift in Sources */,
+				010 /* ResultViews.swift in Sources */,
+				011 /* DailyChallengeView.swift in Sources */,
+				012 /* AudioManager.swift in Sources */,
+				013 /* Animations.swift in Sources */,
+				014 /* SettingsView.swift in Sources */,
+				015 /* DictionaryService.swift in Sources */,
+				016 /* ConnectionBanner.swift in Sources */,
+				017 /* OnboardingView.swift in Sources */,
+				036 /* TutorialOverlay.swift in Sources */,
+				037 /* FirstWinCelebration.swift in Sources */,
+				038 /* ShareCardGenerator.swift in Sources */,
+				039 /* DailyChallengeManager.swift in Sources */,
+				040 /* AchievementSystem.swift in Sources */,
+				041 /* AchievementsView.swift in Sources */,
+				042 /* PerformanceMonitor.swift in Sources */,
+				043 /* LoadingStates.swift in Sources */,
+				044 /* LeaderboardView.swift in Sources */,
+				045 /* BotPersonality.swift in Sources */,
+				046 /* BotSelectionView.swift in Sources */,
+				018 /* Effects.swift in Sources */,
+				019 /* ScoreBar.swift in Sources */,
+				020 /* StatsManager.swift in Sources */,
+				021 /* PremiumTile.swift in Sources */,
+				022 /* GameFeel.swift in Sources */,
+				023 /* Logger.swift in Sources */,
+				024 /* ResponsiveLayout.swift in Sources */,
+				025 /* UserGuideView.swift in Sources */,
+				026 /* Accessibility.swift in Sources */,
+				027 /* KidsModeManager.swift in Sources */,
+				028 /* KidsTheme.swift in Sources */,
+				029 /* KidsWordFilter.swift in Sources */,
+				030 /* ParentalControlsView.swift in Sources */,
+				031 /* KidsComponents.swift in Sources */,
+				032 /* KidsResultViews.swift in Sources */,
+				033 /* PINVerificationView.swift in Sources */,
+				034 /* ShareSheet.swift in Sources */,
+				035 /* ViralSharing.swift in Sources */,
+				400369445E66E390491E0823 /* LocalDictionary.swift in Sources */,
+				2B4467213D7FCB227F6EF24A /* LocalScorer.swift in Sources */,
+				E6FC341E09EDDFF78B3E4CA8 /* LocalRackGenerator.swift in Sources */,
+				51B5D0C8708FD44308856938 /* LocalBotPlayer.swift in Sources */,
+				8A5AA0F6D153C922BBD82FAE /* GameCenterService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8L5LTN9LMB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		811 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8L5LTN9LMB;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RackRush/RackRush.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RackRush/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.btltech.RackRush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RackRush/RackRush.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RackRush/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.btltech.RackRush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		800 /* Build configuration list for PBXNativeTarget "RackRush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				820 /* Debug */,
+				821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		850 /* Build configuration list for PBXProject "RackRush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				810 /* Debug */,
+				811 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		901 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 16.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		900 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 901 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 750 /* Project object */;
+}
