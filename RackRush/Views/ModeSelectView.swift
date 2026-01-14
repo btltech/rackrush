@@ -146,6 +146,7 @@ struct ModeSelectView: View {
                         
                         Button(action: {
                             AudioManager.shared.playTap()
+                            GameCenterService.shared.cancelMatchmaking()  // Stop matchmaking
                             isQueued = false
                             gameState.screen = .home
                         }) {

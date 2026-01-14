@@ -108,7 +108,10 @@ class KidsModeManager: ObservableObject {
     
     var ageGroup: AgeGroup {
         get { AgeGroup(rawValue: ageGroupRaw) ?? .medium }
-        set { ageGroupRaw = newValue.rawValue }
+        set { 
+            objectWillChange.send()  // Fire change notification for UI updates
+            ageGroupRaw = newValue.rawValue 
+        }
     }
     
     // MARK: - PIN Management

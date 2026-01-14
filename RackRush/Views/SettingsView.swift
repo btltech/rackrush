@@ -162,6 +162,24 @@ struct SettingsView: View {
                             .glassBackground(cornerRadius: 16)
                         }
                         
+                        // Legal & Support Section
+                        VStack(alignment: .leading, spacing: 16) {
+                            SectionHeader(title: "LEGAL & SUPPORT", icon: "doc.text.fill")
+                            
+                            VStack(spacing: 0) {
+                                Link(destination: URL(string: "https://github.com/btltech/rackrush/blob/main/PRIVACY_POLICY.md")!) {
+                                    SettingsLinkRow(title: "Privacy Policy", icon: "hand.raised.fill")
+                                }
+                                
+                                Divider().background(theme.surfaceHighlight)
+                                
+                                Link(destination: URL(string: "https://github.com/btltech/rackrush/blob/main/SUPPORT.md")!) {
+                                    SettingsLinkRow(title: "Support", icon: "envelope.fill")
+                                }
+                            }
+                            .glassBackground(cornerRadius: 16)
+                        }
+                        
                         Spacer(minLength: 40)
                     }
                     .padding()
@@ -324,6 +342,34 @@ struct SettingsRow: View {
                 .foregroundColor(theme.textMuted)
         }
         .padding(16)
+    }
+}
+
+// MARK: - Settings Link Row
+struct SettingsLinkRow: View {
+    let title: String
+    let icon: String
+    @Environment(\.theme) var theme
+    
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .font(.system(size: 16))
+                .foregroundColor(theme.primary)
+                .frame(width: 24)
+            
+            Text(title)
+                .font(.system(size: 16, weight: .medium))
+                .foregroundColor(theme.textPrimary)
+            
+            Spacer()
+            
+            Image(systemName: "arrow.up.right.square")
+                .font(.system(size: 14))
+                .foregroundColor(theme.textMuted)
+        }
+        .padding(16)
+        .contentShape(Rectangle())
     }
 }
 

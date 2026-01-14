@@ -368,15 +368,17 @@ class GameState: ObservableObject {
         currentRoundNumber += 1
         currentRound = currentRoundNumber
         
-        // Generate rack locally
-        let letterCount = selectedMode
+        // Get Kids Mode manager first
+        let kidsManager = KidsModeManager.shared
+        
+        // Generate rack locally - respect Kids Mode if enabled
+        let letterCount = kidsManager.isEnabled ? kidsManager.ageGroup.letterCount : selectedMode
         let (generatedLetters, generatedBonuses) = LocalRackGenerator.shared.generate(letterCount: letterCount)
         
         letters = generatedLetters
         bonuses = generatedBonuses.map { BonusTile(index: $0.index, type: $0.type) }
         
         // Get timer from kids mode or default
-        let kidsManager = KidsModeManager.shared
         let timerSeconds = kidsManager.isEnabled ? kidsManager.ageGroup.timerSeconds : 30
         roundDurationMs = timerSeconds * 1000
         // Only show 3-2-1 countdown for first round

@@ -195,8 +195,9 @@ class GameCenterService: NSObject, ObservableObject {
         
         print("🎮 Starting round \(currentRound)")
         
-        // Generate letters locally
-        let letterCount = 8  // Standard mode
+        // Generate letters locally - respect Kids Mode if enabled
+        let kidsManager = KidsModeManager.shared
+        let letterCount = kidsManager.isEnabled ? kidsManager.ageGroup.letterCount : 8
         let (generatedLetters, generatedBonuses) = LocalRackGenerator.shared.generate(letterCount: letterCount)
         
         letters = generatedLetters
